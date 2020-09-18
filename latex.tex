@@ -152,7 +152,7 @@ https://github.com/KUSUMAPRIYAPULAVARTY/assignment4
  \section{QUESTION}
 Prove that the following equations represent two straight lines.Also find their point of intersection and the angle between them
 \begin{align}
- 3y^2-8xy-3x^2-29x+3y-18=0\label{?}
+ 3y^2-8xy-3x^2-29x+3y-18=0\label{1}
 \end{align}
 
 %
@@ -172,11 +172,11 @@ This represents a pair of straight lines if
     \mydet{\vec{V}&\vec{u}\\\vec{u}^T&f}=0
 \end{align}
 \section{Solution}
-\mydet{\vec{V}&\vec{u}\\\vec{u}^T&f} of \ref{?} becomes
+\mydet{\vec{V}&\vec{u}\\\vec{u}^T&f} of \eqref{1} becomes
 \begin{align}
-    \mydet{-3&-4&-\frac{29}{2}\\-4&3&\frac{3}{2}\\-\frac{29}{2}&\frac{3}{2}&-18}\label{????}
+    \mydet{-3&-4&-\frac{29}{2}\\-4&3&\frac{3}{2}\\-\frac{29}{2}&\frac{3}{2}&-18}\label{2}
 \end{align}
-Expanding equation \ref{????}, we get zero.\\
+Expanding equation \eqref{2}, we get zero.\\
 Hence given equation represents a pair of straight lines.
 \section{Finding the individual lines}
 Slopes of the individual lines are roots of equation 
@@ -214,10 +214,18 @@ Comparing the equations, we have
 \end{align}
 The individual line equations therefore become
 \begin{align}
-    \myvec{1&3}\vec{x}=-9\label{??} ,\\\myvec{-3&1}\vec{x}=2\label{???}
+    \myvec{1&3}\vec{x}=-9\label{3} ,\\\myvec{-3&1}\vec{x}=2\label{4}
+\end{align}
+Note that the convolution of the normal vectors, should satisfy the below condition
+\begin{align}
+    \myvec{1\\3}*\myvec{-3\\1}=\myvec{a\\2b\\c}\label{5}
+\end{align}
+The LHS part of \eqref{5} can be rewritten using toeplitz matrix as
+\begin{align}
+    \myvec{1&0\\3&1\\0&3}\myvec{-3\\1}=\myvec{-3\\-8\\3}=\myvec{a\\2b\\c}
 \end{align}
 \section{Intersection Point}
-The augmented matrix for the set of equations represented in \ref{??}, \ref{???} is
+The augmented matrix for the set of equations represented in \eqref{3}, \eqref{4} is
 \begin{align}
 \myvec{1&3&-9\\-3&1&2}
 \end{align}
@@ -241,7 +249,7 @@ Angle between two lines $\theta$ can be given by
 \begin{align}
 \cos \theta = \frac{\vec{n_1}^T\vec{n_2}}{\norm{\vec{n_1}}\norm{\vec{n_2}}}
 \end{align}
-From \ref{??}, \ref{???},
+From \eqref{3}, \eqref{4},
 \begin{align}
 \cos \theta=\frac{\myvec{1&3}\myvec{-3\\1}}{\sqrt{(3)^2 +1} \times \sqrt{(-3)^2 +1}}=0\\
 \implies \theta = 90\degree
